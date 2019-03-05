@@ -97,7 +97,7 @@ namespace OnlineChat
                 //app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
@@ -107,7 +107,7 @@ namespace OnlineChat
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    template: "api/{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>

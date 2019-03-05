@@ -79,9 +79,9 @@ namespace Logic.Service
 
             Database.User.Create(user);
             Database.Save();
-
+            //AutoMapperConfigurationException
             var mapperDto = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDto>()).CreateMapper();
-            return mapper.Map<User, UserDto>(user);
+            return mapperDto.Map<User, UserDto>(user);
         }
 
         public void Update(UserDto userParam)
